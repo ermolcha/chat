@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .global-wrapper {
     display: flex;
     justify-content: space-between;
@@ -42,65 +46,66 @@
     padding: 10px;
 }
 
-.chat1, .chat2 {
+.chat-wrapper {
     width: 45%;
     height: 90%;
+}
+
+.chat1, .chat2 {
+    height: calc(100% - 45px);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
     border: #3fb745 2px solid;
-    border-radius: 15px;
+    border-radius: 0  0 15px 15px;
     background-color: rgba(218, 255, 215, 0.31);
     position: relative;
+    overflow-y: auto;
 }
 
 .title-chat {
-    position: absolute;
-    top: 0;
     width: 100%;
-    height: 45px;
+    padding: 10px 5px;
     background-color: rgba(63, 183, 69, 0.55);
     border-radius: 15px 15px 0 0;
     text-align: center;
     font-size: 20px;
-    padding-top: 10px;
     font-weight: bold;
-    z-index: 1;
+    min-height: 45px;
 }
 
+
 .message-wrapper {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    /*justify-content: end;*/
-    /*align-items: end;*/
-    position: relative;
+    gap: 10px;
+
 }
+
 
 .message-from-sender {
     width: 300px;
-    height: 50px;
+    max-width: 90%;
+    margin-left: auto;
     background-color: rgba(27, 180, 35, 0.92);
-    position: absolute;
-    right: 0;
-    bottom: 60px;
-    margin: 10px;
+    position: relative;
     border-radius: 40px;
     font-size: 18px;
-    display: grid;
-    place-items: center;
+
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 .message-from-recipient {
+    padding: 10px;
+    max-width: 90%;
     width: 300px;
-    height: 50px;
     background-color: white;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin: 10px;
+    position: relative;
+    margin-bottom: 10px;
     border-radius: 40px;
     font-size: 18px;
-    display: grid;
-    place-items: center;
+
 }
 
 
